@@ -1,0 +1,13 @@
+{% extends 'core/base.html' %}
+{% block title %}Input Details{% endblock %}
+{% block content %}
+<div class="bg-white p-8 rounded shadow-md w-full max-w-xl">
+    <h2 class="text-2xl font-bold mb-4">Generate Speech for <span class="text-blue-600">{{ category }}</span></h2>
+    <form method="post">
+        {% csrf_token %}
+        <input name="product" placeholder="Product Name" class="w-full mb-4 px-4 py-2 border rounded">
+        <textarea name="client_profile" placeholder="Client Profile Description" rows="4" class="w-full mb-4 px-4 py-2 border rounded"></textarea>
+        <button type="submit" class="w-full bg-indigo-600 text-white py-2 rounded hover:bg-indigo-700">Generate Speech</button>
+    </form>
+</div>
+{% endblock %}
